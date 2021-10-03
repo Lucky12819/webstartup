@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<!-- Created by CodingLab |www.youtube.com/c/CodingLabYT-->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title> Responsive Sidebar Menu  | CodingLab </title>
+    
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,400,500,600" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="style1.css">
+   </head>
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+      <i class='bx bxl-c-plus-plus icon'></i>
+        <div class="logo_name">Company Name</div>
+        <i class='bx bx-menu' id="btn" ></i>
+    </div>
+    <ul class="nav-list">
+      <!-- <li>
+          <i class='bx bx-search' ></i>
+         <input type="text" placeholder="Search...">
+         <span class="tooltip">Search</span>
+      </li> -->
+      <li>
+        <a href="#dashboard">
+          <i class='bx bx-grid-alt'></i>
+          <span class="links_name">Dashboard</span>
+        </a>
+         <span class="tooltip">Dashboard</span>
+      </li>
+      <li>
+       <a href="#">
+         <i class='bx bx-user' ></i>
+         <span class="links_name">User</span>
+       </a>
+       <span class="tooltip">User</span>
+     </li>
+     
+     
+     
+     <li>
+       <a href="#">
+         <i class='bx bx-cart-alt' ></i>
+         <span class="links_name">Order</span>
+       </a>
+       <span class="tooltip">Order</span>
+     </li>
+     
+     <li>
+       <a href="#">
+         <i class='bx bx-cog' ></i>
+         <span class="links_name">Setting</span>
+       </a>
+       <span class="tooltip">Setting</span>
+     </li>
+     <li class="profile">
+         <div class="profile-details">
+           <!-- <img src="profile.jpg" alt="profileImg"> -->
+           <div class="name_job">
+             <div class="name">XYZ</div>
+             
+           </div>
+         </div>
+         <button><i class='bx bx-log-out' id="log_out" ></i></button>
+     </li>
+    </ul>
+  </div>
+  <section class="home-section">
+      <section class="main-section" id='dashboard'>
+      <p class='text'>Dashboard</p><br>
+      <div class="dashbord">
+      <div class="icon-section">
+        <i class='bx bx-laptop' aria-hidden="true"></i><br>
+      <small>Existing website</small>
+      <p>1</p>
+      </div>
+      <div class="detail-section">
+      <button id='exwebbtn' onclick="existingWebsite()">More Info </button>
+      </div>
+      </div>
+      <div class="dashbord dashbord-green">
+      <div class="icon-section">
+      <i class="bx bx-user" aria-hidden="true"></i><br>
+      <small>Users</small>
+      <p>256</p>
+      </div>
+      <div class="detail-section">
+      <button onclick="existingWebsite()">More Info </button>
+      </div>
+      </div>
+      <div class="dashbord dashbord-blue dashboard-add">
+      <div class="icon-section">
+      <i class = "bx bx-plus" aria-hidden="true"></i><br>
+      <p>Create New <br>Website</p>
+      </div>
+      <div class="detail-section">
+        <button id='crwebbtn'>Get Started Now </button>
+      </div>
+      </div>      
+      </div>
+  
+    </section>
+  <section class="Existing-website" id='exweb'>
+    <div><button id = 'exbackbtn' class='backbtn'><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAhNJREFUSEuVV9d1wzAMPGwWb5BsIE0mZYOM4BHkTbwB88QKopC0fqzHIrS7A0yoDwEIQP5R622hv6HO521vPW4TiO9/YFO40d8c2mR+9S56gRsRZ+djovi7HYx2zvtkvx7v+bG0nZUzqaKTp0/BShqXkuPVeBDBBsKFgMvDxDx6AS7lqao3bUA4ALwBPAi4Snn5XWWYf4e9GxQyKbEBdDQkYQdwLhYqUojdNWpsg2gDcEda0Lsj4JynlAfQF5Xx2IVNbxQlUuO8Lg2LUhie8C+mlxAyk2gnhDPVdUWypLHQKD+ghxNpszlXugGnW0m7QxsBB4vMBJKCg0q1z2gmIPXWhsCAlJD7AXpdnL8IeBfxk8ol0yuqqSmheeym9wHg2YhRcRIv3Kp0VAQoVfhAMPXRW3CevJ/I3AihoN+I5BWbvOj6/JUVr2bRKEqWxnZ5B+GUc8Lclx5t0i+PkjLtO0Bn5PRaP7NPMV+yYQM4BInwRKvsenOCYDvUCwgfrZJk+up3e73AaW44v3vyWdY9w41H8UNbiE2iehjTzrvNsPk7ga1WrHE8fegHwN+sLboOechU1UkLxfgLwFejxwTfKq13FlmT5ePiAL3fSYHoLRu7GDYHPcwdfTxpNFBqDCvtlEJYhQmLeLXUdo6Wa93xWGlyrylz5A8xbeZkPeKVkPxKqNvdfye92w2Gg3HHFD9zsiwA/Ae4HwA2YmBe5AAAAABJRU5ErkJggg=="/></button>
+    <p class='text'>Existing Website </p></div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Website Name</th>
+          <th scope="col">options</th>
+          <th scope="col">users</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>XYZ website</td>
+          <td>
+            <button class ='optionsBtn webPreviewBtn '><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAidJREFUSEulV+1VwzAMPG0AG7ABMAHOJJQRmKDpBIxAmaRlAsoErMAG7vNHYsmWEgfyA3iOLPlOp3Mg1A8B8PEHIH/FyLzU/N3kWVkIebY/vPr23fH4qfBiop4qVgynTMYwxOLFDQH3nqPpqa/HfwP4lcToiHcA3rcxuHqqF4COQjfVljsQfpiuttXP0cYxbjnyWlwOwCk3/RXApRbAKjYpmQcAb/k8A4DzhMQoHF+LwLQh9MYHQipN5vVm1sgR/CnHp3x5XEVhApyPiGXhBqUyzAYTmcEayCSu0kklsIdcUwoiHwFnzhYnzoFwylxKqi3Yy07nCJipLoVNxDHbXHiR6kUlkwN807qolippRhzFMviswgJKiqshuPV2A3GaFf7IHhPO80z/rdWGuATiiEZRtYTRTgy7yNp+s8I0AL6a47JBFRfPV+ixKWBvesZJIiZg8JFqG3HlIprMUuGU4j/OxXO3SlI+HDYUjnMsx8lSb8cNwlSt9bgAcZ4bSI+qZ+8tHs4O1ONcMTzcJl8SCad0ZaYWX9MjwV+SZbbOFVaPAD3zW0gX0aYPvw8Au3raJoCBlqd84Y3xa6HDmkSIgjgvjfmYn9OdzJ1rJGCvlesQUe8ZDwDGRHZ5wsJ+uqh1xPYHaQHbeBvfdABhnGzY1lJjCSuXRA81TKtqYcsadeHyA/Upv76derjUrLHjXxvZgrbwik0t9lI9ks5/KmyPQXltMbjoLzbtV4G7BTafQ1IxAAAAAElFTkSuQmCC" title="preview"></button>
+            <button class='optionsBtn webEditBtn'><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAitJREFUSEutV211wzAMPCFYIAxCIKxI1iAYhHVMWgSFUAqDUgbac/wlW1Lsvrf86RZbX6fT2SHMPgSAZzcD2PcnI2mb3ocf45mJ0noj8CAvQt0T/v7fZ0nunvHXKECAMAytzBWC+4sQ9JGcnUB4Bgg87ETFM/C6Oeaga9rxC+AEIFXeV99BPRNacqaiSReAv7u0anADMt1j5XnYibzhCuCzq+0HwCVv6MltNMKvva7QQuAvBoLz3MsSHMANwNmbmglWt0kkQBbwTqTQ0xBsE7vC/yGTc5kvNccx0cGjAi8c2RuJFJf34CNPdf2AXEaSwa5nb/FFwJUJm6kizjgnYydUZYaE1you9VQqVKuc0qiB2qZUIw55TntdOiCSzeljAYmZCHgNohnsVdgppWvIJVeL6QrQHeD3mLdyWSoVYyYOg7YjzR4PXgKvib1Z+GvgaHQj4NyclEOa1JPVUS6sBDw4slgUWzxP9LRHSFdv+Q7i/ubM5S2Lg69vcmLbKjNCsWLtQSDYHOAbwFGZrI4b7z1R8cYpX1qkXVCmErR3mKS0u+4YU5A2epLZc2bjFHTAH69A9d6pmD5EZ54Ah7PVNJ5i9bFkSr+G7B121ZvXSck8xKk20a+99K/eOD3me3MsiO7g1NDPHyxfoOwyhVtTn+2ra9st+QHQFWidxzGO+81gIy513oyukNWsjj7KBc2/GQ8I1S5fej/eHOseq2a9IJivjNPMF9oh0QdS8gdWvt8qvzS5qwAAAABJRU5ErkJggg==" title='edit' ></button>
+          </td>
+          <td class = 'tableUsers'>256</td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </section>
+    <section class = "create-website" id='crweb'>
+      <div><button id='crbackbtn' class='backbtn'><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAhNJREFUSEuVV9d1wzAMPGwWb5BsIE0mZYOM4BHkTbwB88QKopC0fqzHIrS7A0yoDwEIQP5R622hv6HO521vPW4TiO9/YFO40d8c2mR+9S56gRsRZ+djovi7HYx2zvtkvx7v+bG0nZUzqaKTp0/BShqXkuPVeBDBBsKFgMvDxDx6AS7lqao3bUA4ALwBPAi4Snn5XWWYf4e9GxQyKbEBdDQkYQdwLhYqUojdNWpsg2gDcEda0Lsj4JynlAfQF5Xx2IVNbxQlUuO8Lg2LUhie8C+mlxAyk2gnhDPVdUWypLHQKD+ghxNpszlXugGnW0m7QxsBB4vMBJKCg0q1z2gmIPXWhsCAlJD7AXpdnL8IeBfxk8ol0yuqqSmheeym9wHg2YhRcRIv3Kp0VAQoVfhAMPXRW3CevJ/I3AihoN+I5BWbvOj6/JUVr2bRKEqWxnZ5B+GUc8Lclx5t0i+PkjLtO0Bn5PRaP7NPMV+yYQM4BInwRKvsenOCYDvUCwgfrZJk+up3e73AaW44v3vyWdY9w41H8UNbiE2iehjTzrvNsPk7ga1WrHE8fegHwN+sLboOechU1UkLxfgLwFejxwTfKq13FlmT5ePiAL3fSYHoLRu7GDYHPcwdfTxpNFBqDCvtlEJYhQmLeLXUdo6Wa93xWGlyrylz5A8xbeZkPeKVkPxKqNvdfye92w2Gg3HHFD9zsiwA/Ae4HwA2YmBe5AAAAABJRU5ErkJggg=="/></button>
+      <p class='text'>Create Website</p></div>
+    </section>
+    </section>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+    <script src="script1.js"></script>
+    <script>
+      let dashboard = document.getElementById('dashboard');
+      let existingweb = document.getElementById('exweb');
+      let createweb = document.getElementById('crweb');
+      let existingwebbtn = document.getElementById('exwebbtn');
+      let createwebbtn = document.getElementById('crwebbtn');
+      let crbacktodashboard = document.getElementById('crbackbtn');
+      let exbacktodashboard = document.getElementById('exbackbtn');
+
+      existingwebbtn.addEventListener("click",existingWebsite);
+      createwebbtn.addEventListener("click",createWebsite);
+      exbacktodashboard.addEventListener("click",backDashboard);
+      crbacktodashboard.addEventListener("click",backDashboard);
+      
+      function backDashboard(){
+        dashboard.style.display = "block";
+       createweb.style.display = "none";
+       existingweb.style.display = "none";
+      }
+      function existingWebsite(){
+       dashboard.style.display = "none";
+       createweb.style.display = "none";
+       existingweb.style.display = "block";
+     }
+     
+      function createWebsite(){
+        /*dashboard.style.display = "none";
+        createweb.style.display = "block";
+        existingweb.style.display = "none";*/
+        window.location.href = "form.html";
+      }
+     
+    </script> 
+  </body>
+</html>
